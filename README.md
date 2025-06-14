@@ -42,7 +42,7 @@ Após clonar o projeto frontend, você precisará configurar a variável de ambi
 
     *   **Se estiver rodando a API localmente** (exemplo, se sua API local roda na porta 3000):
         ```env
-        VITE_BACKEND_API_URL=http://localhost:3000/api
+        VITE_BACKEND_API_URL=http://localhost:3333/api
         ```
         (Ajuste a porta e o caminho base `/api` conforme a configuração da sua API backend local).
 
