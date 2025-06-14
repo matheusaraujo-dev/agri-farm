@@ -16,10 +16,12 @@ export function useFarms() {
     mutationKey: ["createFarm"],
     mutationFn: createFarm,
     onSuccess: () => {
-      client.invalidateQueries({
-        queryKey: ["farms", "fetchDashboard"],
-        refetchType: "active",
-      });
+      client.invalidateQueries(
+        { queryKey: ["farms"] }
+      );
+      client.invalidateQueries(
+        { queryKey: ["fetchDashboard"] }
+      );
     },
   });
 
@@ -27,10 +29,12 @@ export function useFarms() {
     mutationKey: ["updateFarm"],
     mutationFn: updateFarm,
     onSuccess: () => {
-      client.invalidateQueries({
-        queryKey: ["farms", "fetchDashboard"],
-        refetchType: "active",
-      });
+      client.invalidateQueries(
+        { queryKey: ["farms"] }
+      );
+       client.invalidateQueries(
+        { queryKey: ["fetchDashboard"] }
+      );
     },
   });
 
@@ -38,10 +42,12 @@ export function useFarms() {
     mutationKey: ["deleteFarm"],
     mutationFn: deleteFarm,
     onSuccess: () => {
-      client.invalidateQueries({
-        queryKey: ["farms", "fetchDashboard"],
-        refetchType: "active",
-      });
+      client.invalidateQueries(
+        { queryKey: ["farms"] }
+      );
+       client.invalidateQueries(
+        { queryKey: ["fetchDashboard"] }
+      );
     },
   });
 
