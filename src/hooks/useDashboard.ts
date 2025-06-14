@@ -21,7 +21,6 @@ export function useDashboard() {
     queryKey: ["fetchDashboard"],
     queryFn: fetchDashboard,
     initialData: initialDashboardData,
-     staleTime: 1000 * 20, // 10 seconds
   });
 
   return { dashboardData: data, isLoading };
