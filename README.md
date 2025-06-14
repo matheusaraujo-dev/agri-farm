@@ -20,7 +20,7 @@ Antes de começar, garanta que você tenha o seguinte instalado em sua máquina:
 *   [Yarn](https://classic.yarnpkg.com/en/docs/install) (opcional, se preferir usar Yarn)
 *   **API Backend Rodando:** Para que o frontend funcione completamente, ele precisa se comunicar com a API backend. Você tem duas opções:
     1.  **Rodar a API Localmente:**
-        *   Clone o repositório da API: `https://github.com/matheusaraujo-dev/agri-farm-api`
+        *   Clone o repositório da API: [`https://github.com/matheusaraujo-dev/agri-farm-api`](https://github.com/matheusaraujo-dev/agri-farm-api)
         *   Siga as instruções no `README.md` do repositório da API para executá-la localmente.
     2.  **Usar a API Pública (para desenvolvimento/testes):**
         *   Se não desejar rodar a API localmente, você pode configurar o frontend para usar uma API pública de exemplo disponível em: `https://multlotto.com/extractta/api/`
