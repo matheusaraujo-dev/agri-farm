@@ -9,7 +9,7 @@ export function useProducers() {
   const { data, isLoading } = useQuery({
     queryKey: ["producers"],
     queryFn: fetchProducers,
-    staleTime: 1000 * 5, // 10 seconds
+    staleTime: 1000 * 10, // 10 seconds
   });
 
   const createProducerMutation = useMutation({
