@@ -18,8 +18,12 @@ import { useFarms } from "@/hooks/useFarms";
 const ProducersPage: React.FC = () => {
   const { toast } = useToast();
 
-  const { producers, createProducerMutation, updateProducerMutation } =
-    useProducers();
+  const {
+    producers,
+    createProducerMutation,
+    updateProducerMutation,
+    deleteProducerMutation,
+  } = useProducers();
 
   const { farms } = useFarms();
 
@@ -68,9 +72,9 @@ const ProducersPage: React.FC = () => {
     setDeleteDialog({ isOpen: true, producer });
   };
 
-  const confirmDelete = () => {
+  const confirmDelete = async () => {
     if (deleteDialog.producer) {
-      // deleteProducer(deleteDialog.producer.id);
+      await deleteProducerMutation.mutateAsync(deleteDialog.producer.id);
       toast({
         title: "Sucesso!",
         description: "Produtor excluído com sucesso.",

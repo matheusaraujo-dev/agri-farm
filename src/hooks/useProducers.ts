@@ -3,7 +3,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useBackendApi } from "./useBackendApi";
 
 export function useProducers() {
-  const { fetchProducers, createProducer, updateProducer } = useBackendApi();
+  const { fetchProducers, createProducer, updateProducer, deleteProducer } =
+    useBackendApi();
   const client = useQueryClient();
 
   const { data, isLoading } = useQuery({
@@ -34,10 +35,22 @@ export function useProducers() {
     },
   });
 
+  const deleteProducerMutation = useMutation({
+    mutationKey: ["deleteProducer"],
+    mutationFn: deleteProducer,
+    onSuccess: () => {
+      client.invalidateQueries({
+        queryKey: ["producers"],
+        refetchType: "active",
+      });
+    },
+  });
+
   return {
     producers: data?.producers ?? [],
     isLoading,
     createProducerMutation,
     updateProducerMutation,
+    deleteProducerMutation,
   };
 }

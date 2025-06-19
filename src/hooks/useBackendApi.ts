@@ -161,6 +161,14 @@ export function useBackendApi() {
     [client]
   );
 
+  const deleteProducer = useCallback(
+    async (producerId: number) => {
+      const response = await client.delete(`/producers/${producerId}`);
+      return response.data as { message: string };
+    },
+    [client]
+  );
+
   const deleteFarm = useCallback(
     async (farmId: number) => {
       const response = await client.delete(`/farms/${farmId}`);
@@ -177,6 +185,7 @@ export function useBackendApi() {
     deleteCropHarvest,
     deleteFarm,
     deleteHarvest,
+    deleteProducer,
 
     fetchCrops,
     fetchDashboard,
